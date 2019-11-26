@@ -20,13 +20,13 @@
           <tr v-for="(fact, idx) in clonedData.facts" :key="idx">
             <td class="text-left">
               {{fact.title}}
-              <q-popup-edit v-model="fact.title">
+              <q-popup-edit v-model="fact.title" touch-position buttons persistent>
                 <q-input v-model="fact.title" dense autofocus />
               </q-popup-edit>
             </td>
             <td class="text-left">
               {{fact.value}}
-              <q-popup-edit v-model="fact.value">
+              <q-popup-edit v-model="fact.value" touch-position buttons persistent>
                 <q-input v-model="fact.value" dense autofocus />
               </q-popup-edit>
             </td>

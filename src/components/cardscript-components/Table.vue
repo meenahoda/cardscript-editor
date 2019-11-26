@@ -27,13 +27,13 @@
           <tr v-for="(column, idx) in clonedData.columns" :key="idx">
             <td class="text-left">
               {{column.title}}
-              <q-popup-edit v-model="column.title">
+              <q-popup-edit v-model="column.title" touch-position buttons persistent>
                 <q-input v-model="column.title" dense autofocus />
               </q-popup-edit>
             </td>
             <td class="text-left">
               {{column.field}}
-              <q-popup-edit v-model="column.field">
+              <q-popup-edit v-model="column.field" touch-position buttons persistent>
                 <q-input v-model="column.field" dense autofocus />
               </q-popup-edit>
             </td>
