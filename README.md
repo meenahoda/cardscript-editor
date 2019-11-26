@@ -1,6 +1,6 @@
 # Cardscript Editor (cardscript-editor)
 
-Tool for editing cardscript
+Drag-n-drop interface tool for editing Cardscript JSON
 
 ## Install the dependencies
 ```bash
