@@ -32,7 +32,7 @@ export function saveCurrentCard (state) {
 export function addComponent (state, { type, array, $cardscript }) {
   const component = $cardscript[array][type]
   if (component) {
-    if (component.data.id === 'ID') {
+    if (component.required.includes('id')) {
       component.data.id = `component${state.cardscript[array].length + 1}`
     }
 

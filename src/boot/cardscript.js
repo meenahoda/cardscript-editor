@@ -6,7 +6,7 @@ export default ({ Vue }) => {
       'Input.ChoiceSet': {
         data: {
           type: 'Input.ChoiceSet',
-          id: 'ID',
+          id: '',
           title: '',
           icon: '',
           spacing: '',
@@ -16,6 +16,7 @@ export default ({ Vue }) => {
           isMultiSelect: false,
           choices: []
         },
+        required: [ 'id' ],
         component: () => import(`components/cardscript-components/InputChoiceSet.vue`)
       },
       'FactSet': {
@@ -58,7 +59,7 @@ export default ({ Vue }) => {
       'TextBlock': {
         data: {
           type: 'TextBlock',
-          id: 'ID',
+          id: '',
           text: '',
           isSubtle: false,
           wrap: false,
@@ -71,7 +72,7 @@ export default ({ Vue }) => {
       'Input.Text': {
         data: {
           type: 'Input.Text',
-          id: 'ID',
+          id: '',
           title: '',
           icon: '',
           placeholder: '',
@@ -80,12 +81,13 @@ export default ({ Vue }) => {
           editor: false,
           isMultiline: false
         },
+        required: [ 'id' ],
         component: () => import(`components/cardscript-components/InputText.vue`)
       },
       'List': {
         data: {
           type: 'List',
-          id: 'ID',
+          id: '',
           arrayPath: '',
           notFoundText: '',
           rowKey: '',
@@ -100,12 +102,13 @@ export default ({ Vue }) => {
           dense: false,
           clickToLaunch: false
         },
+        required: [ 'id' ],
         component: () => import(`components/cardscript-components/List.vue`)
       },
       'Table': {
         data: {
           type: 'Table',
-          id: 'ID',
+          id: '',
           title: '',
           arrayPath: '',
           notFoundText: '',
@@ -114,12 +117,13 @@ export default ({ Vue }) => {
           showLaunches: false,
           columns: []
         },
+        required: [ 'id' ],
         component: () => import(`components/cardscript-components/Table.vue`)
       },
       'Input.Number': {
         data: {
           type: 'Input.Number',
-          id: 'ID',
+          id: '',
           title: '',
           icon: '',
           placeholder: '',
@@ -128,6 +132,7 @@ export default ({ Vue }) => {
           maximum: null,
           separator: false
         },
+        required: [ 'id' ],
         component: () => import(`components/cardscript-components/InputNumber.vue`)
       },
       'Jumbotron': {
@@ -141,7 +146,7 @@ export default ({ Vue }) => {
       },
       'Container': {
         data: {
-          id: 'ID',
+          id: '',
           title: '',
           backgroundImage: '',
           wash: '',
@@ -178,17 +183,19 @@ export default ({ Vue }) => {
       'Action.NextTab': {
         data: {
           type: 'Action.NextTab',
-          id: 'ID',
+          id: '',
           title: 'Next'
         },
+        required: [ 'id' ],
         component: () => import(`components/cardscript-components/ActionNextTab.vue`)
       },
       'Action.PreviousTab': {
         data: {
           type: 'Action.PreviousTab',
-          id: 'ID',
+          id: '',
           title: 'Previous'
         },
+        required: [ 'id' ],
         component: () => import(`components/cardscript-components/ActionPreviousTab.vue`)
       },
       'Action.OpenUrl': {
