@@ -27,13 +27,13 @@
           <tr v-for="(choice, idx) in clonedData.choices" :key="idx">
             <td class="text-left">
               {{choice.title}}
-              <q-popup-edit v-model="choice.title" touch-position buttons persistent>
+              <q-popup-edit v-model="choice.title" touch-position buttons persistent fit>
                 <q-input v-model="choice.title" dense autofocus />
               </q-popup-edit>
             </td>
             <td class="text-left">
               {{choice.value}}
-              <q-popup-edit v-model="choice.value" touch-position buttons persistent>
+              <q-popup-edit v-model="choice.value" touch-position buttons persistent fit>
                 <q-input v-model="choice.value" dense autofocus />
               </q-popup-edit>
             </td>
