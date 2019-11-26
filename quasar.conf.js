@@ -83,7 +83,6 @@ module.exports = function (ctx) {
         'QSlider',
         'QEditor',
         'QToggle',
-        'QMediaPlayer',
         'QTabs',
         'QTab',
         'QTabPanels',
