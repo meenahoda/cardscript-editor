@@ -69,15 +69,30 @@ module.exports = function (ctx) {
         'QMarkupTable',
         'QPopupEdit',
 
+        // todo: Required for cardscript-component, consider requiring them in that package
         'QField',
         'QExpansionItem',
         'QChip',
         'QOptionGroup',
-        'QTable'
+        'QTable',
+        'QBtnDropdown',
+        'QPopupProxy',
+        'QDate',
+        'QTime',
+        'QUploader',
+        'QSlider',
+        'QEditor',
+        'QToggle',
+        'QMediaPlayer',
+        'QTabs',
+        'QTab',
+        'QTabPanels',
+        'QTabPanel'
       ],
 
       directives: [
-        'Ripple'
+        'Ripple',
+        'ClosePopup'
       ],
 
       // Quasar plugins
