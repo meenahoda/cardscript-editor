@@ -32,6 +32,10 @@ export function saveCurrentCard (state) {
 export function addComponent (state, { type, array, $cardscript }) {
   const component = $cardscript[array][type]
   if (component) {
+    if (component.data.id === 'ID') {
+      component.data.id = `component${state.cardscript[array].length + 1}`
+    }
+
     state.cardscript[array].push(component.data)
   } else {
     console.warn(`Cannot find component: '${array}/${type}'`)

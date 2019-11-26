@@ -6,7 +6,7 @@ export default ({ Vue }) => {
       'Input.ChoiceSet': {
         data: {
           type: 'Input.ChoiceSet',
-          id: '',
+          id: 'ID',
           title: '',
           icon: '',
           spacing: '',
@@ -58,7 +58,7 @@ export default ({ Vue }) => {
       'TextBlock': {
         data: {
           type: 'TextBlock',
-          id: '',
+          id: 'ID',
           text: '',
           isSubtle: false,
           wrap: false,
@@ -71,7 +71,7 @@ export default ({ Vue }) => {
       'Input.Text': {
         data: {
           type: 'Input.Text',
-          id: '',
+          id: 'ID',
           title: '',
           icon: '',
           placeholder: '',
@@ -85,7 +85,7 @@ export default ({ Vue }) => {
       'List': {
         data: {
           type: 'List',
-          id: '',
+          id: 'ID',
           arrayPath: '',
           notFoundText: '',
           rowKey: '',
@@ -105,7 +105,7 @@ export default ({ Vue }) => {
       'Table': {
         data: {
           type: 'Table',
-          id: '',
+          id: 'ID',
           title: '',
           arrayPath: '',
           notFoundText: '',
@@ -119,7 +119,7 @@ export default ({ Vue }) => {
       'Input.Number': {
         data: {
           type: 'Input.Number',
-          id: '',
+          id: 'ID',
           title: '',
           icon: '',
           placeholder: '',
@@ -141,7 +141,7 @@ export default ({ Vue }) => {
       },
       'Container': {
         data: {
-          id: '',
+          id: 'ID',
           title: '',
           backgroundImage: '',
           wash: '',
@@ -178,7 +178,7 @@ export default ({ Vue }) => {
       'Action.NextTab': {
         data: {
           type: 'Action.NextTab',
-          id: '',
+          id: 'ID',
           title: 'Next'
         },
         component: () => import(`components/cardscript-components/ActionNextTab.vue`)
@@ -186,7 +186,7 @@ export default ({ Vue }) => {
       'Action.PreviousTab': {
         data: {
           type: 'Action.PreviousTab',
-          id: '',
+          id: 'ID',
           title: 'Previous'
         },
         component: () => import(`components/cardscript-components/ActionPreviousTab.vue`)
