@@ -32,8 +32,8 @@ export default {
       if (this.cardscript) {
         // todo: validate against cardscript-schema?
         const id = uuidv1()
-        this.$store.commit('app/cardId', id)
-        this.$store.commit('app/cardscript', JSON.parse(this.cardscript))
+        this.$store.commit('app/setCardId', id)
+        this.$store.commit('app/setCardscript', JSON.parse(this.cardscript))
         this.$router.push({ path: `/${id}/edit` })
       }
     }

@@ -9,13 +9,12 @@
 
       <q-item v-for="(card, cardId) in cards" :key="cardId">
         <q-item-section>
-          <q-item-label>{{cardId}}</q-item-label>
-          <q-item-label caption>{{getTitle(card)}}</q-item-label>
+          <q-item-label>{{getTitle(card)}}</q-item-label>
         </q-item-section>
 
         <q-item-section side>
           <div class="text-grey-8 q-gutter-xs">
-            <q-btn size="12px" flat dense round icon="launch" @click="launchCard(cardId)" />
+            <q-btn size="12px" flat dense round icon="edit" @click="launchCard(cardId)" />
             <q-btn size="12px" flat dense round icon="delete" @click="deleteCard(cardId)" />
           </div>
         </q-item-section>
@@ -32,7 +31,7 @@ export default {
   methods: {
     startNewCardscript () {
       const id = uuidv1()
-      this.$store.commit('app/cardId', id)
+      this.$store.commit('app/setCardId', id)
       this.$store.commit('app/resetCardscript')
       this.launchCard(id)
     },
@@ -43,7 +42,9 @@ export default {
       this.$router.push({ path: `/${cardId}/edit` })
     },
     deleteCard (cardId) {
-      this.$store.commit('app/removeCard', cardId)
+      const cards = Object.assign({}, this.cards)
+      delete cards[cardId]
+      this.cards = cards
     },
     getTitle (card) {
       return card.templateMeta && card.templateMeta.title
@@ -52,8 +53,13 @@ export default {
     }
   },
   computed: {
-    cards () {
-      return this.$store.state.app.cards
+    cards: {
+      get () {
+        return this.$store.state.app.cards
+      },
+      set (e) {
+        this.$store.commit('app/setCards', e)
+      }
     }
   }
 }

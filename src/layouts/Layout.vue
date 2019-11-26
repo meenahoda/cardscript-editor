@@ -56,10 +56,7 @@ export default {
       this.$router.push({ path: `/${this.cardId}/preview` })
     },
     save () {
-      this.$store.commit('app/addCard', {
-        id: this.cardId,
-        card: this.cardscript
-      })
+      this.$store.commit('app/saveCurrentCard')
     },
     viewJson () {
       this.save()

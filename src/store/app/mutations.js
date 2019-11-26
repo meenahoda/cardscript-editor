@@ -1,10 +1,10 @@
-export function addCard (state, { id, card }) { state.cards[id] = card }
+import { date } from 'quasar'
 
-export function removeCard (state, id) { delete state.cards[id] }
+export function setCards (state, e) { state.cards = e }
 
-export function cardId (state, e) { state.cardId = e }
+export function setCardId (state, e) { state.cardId = e }
 
-export function cardscript (state, e) { state.cardscript = e }
+export function setCardscript (state, e) { state.cardscript = e }
 
 export function resetCardscript (state) {
   state.cardscript = {
@@ -19,6 +19,14 @@ export function resetCardscript (state) {
     body: [],
     actions: []
   }
+}
+
+export function saveCurrentCard (state) {
+  if (!state.cardscript.templateMeta.title) {
+    state.cardscript.templateMeta.title = `Untitled - ${date.formatDate(new Date(), 'DD/MM/YY HH:mm')}`
+  }
+
+  state.cards[state.cardId] = state.cardscript
 }
 
 export function addComponent (state, { type, array, $cardscript }) {

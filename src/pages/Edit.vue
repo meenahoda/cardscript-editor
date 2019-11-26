@@ -164,7 +164,7 @@ export default {
         return this.$store.state.app.cardscript
       },
       set (e) {
-        this.$store.commit('app/cardscript', e)
+        this.$store.commit('app/setCardscript', e)
       }
     },
     cardscriptBody: {
