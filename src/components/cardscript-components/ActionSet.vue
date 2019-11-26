@@ -65,6 +65,12 @@ export default {
   methods: {
     addComponent (type) {
       const component = this.$cardscript.actions[type]
+
+      if (component.required && component.required.includes('id')) {
+        // todo: make id more unique - short uuid maybe?
+        component.data.id = `actionSetComponent${this.clonedData.actions.length + 1}`
+      }
+
       const actions = [...this.clonedData.actions]
       actions.push(component.data)
       this.clonedData.actions = actions

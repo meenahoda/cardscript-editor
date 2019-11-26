@@ -70,6 +70,12 @@ export default {
   methods: {
     addComponent (type) {
       const component = this.$cardscript.body[type]
+
+      if (component.required && component.required.includes('id')) {
+        // todo: make id more unique - short uuid maybe?
+        component.data.id = `containerComponent${this.clonedData.items.length + 1}`
+      }
+
       const items = [...this.clonedData.items]
       items.push(component.data)
       this.clonedData.items = items

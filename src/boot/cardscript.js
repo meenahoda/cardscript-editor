@@ -146,6 +146,7 @@ export default ({ Vue }) => {
       },
       'Container': {
         data: {
+          type: 'Container',
           id: '',
           title: '',
           backgroundImage: '',

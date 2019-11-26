@@ -63,6 +63,11 @@ export default {
     addComponent (type) {
       const component = this.$cardscript.body[type]
 
+      if (component.required && component.required.includes('id')) {
+        // todo: make id more unique - short uuid maybe?
+        component.data.id = `collapsibleComponent${this.clonedData.card.body.length + 1}`
+      }
+
       const card = Object.assign({}, this.clonedData.card)
       const items = [...card.body]
       items.push(component.data)
