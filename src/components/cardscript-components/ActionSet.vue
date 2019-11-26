@@ -88,9 +88,16 @@ export default {
       this.editDialog.show = false
     },
     deleteComponent (idx) {
-      const actions = [...this.clonedData.actions]
-      actions.splice(idx, 1)
-      this.clonedData.actions = actions
+      this.$q.dialog({
+        title: 'Confirm',
+        message: 'Are you sure you want to remove this component?',
+        cancel: true,
+        persistent: true
+      }).onOk(() => {
+        const actions = [...this.clonedData.actions]
+        actions.splice(idx, 1)
+        this.clonedData.actions = actions
+      })
     }
   }
 }

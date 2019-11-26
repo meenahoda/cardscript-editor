@@ -93,12 +93,19 @@ export default {
       this.editDialog.show = false
     },
     deleteComponent (idx) {
-      const card = Object.assign({}, this.clonedData.card)
-      const items = [...card.body]
-      items.splice(idx, 1)
-      card.body = items
+      this.$q.dialog({
+        title: 'Confirm',
+        message: 'Are you sure you want to remove this component?',
+        cancel: true,
+        persistent: true
+      }).onOk(() => {
+        const card = Object.assign({}, this.clonedData.card)
+        const items = [...card.body]
+        items.splice(idx, 1)
+        card.body = items
 
-      this.clonedData.card = card
+        this.clonedData.card = card
+      })
     }
   }
 }

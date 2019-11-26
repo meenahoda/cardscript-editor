@@ -62,9 +62,16 @@ export default {
       this.clonedData.choices = choices
     },
     removeChoice (idx) {
-      const choices = [...this.clonedData.choices]
-      choices.splice(idx, 1)
-      this.clonedData.choices = choices
+      this.$q.dialog({
+        title: 'Confirm',
+        message: 'Are you sure you want to remove this choice?',
+        cancel: true,
+        persistent: true
+      }).onOk(() => {
+        const choices = [...this.clonedData.choices]
+        choices.splice(idx, 1)
+        this.clonedData.choices = choices
+      })
     }
   }
 }

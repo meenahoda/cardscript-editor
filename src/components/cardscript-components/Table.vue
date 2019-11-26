@@ -62,9 +62,16 @@ export default {
       this.clonedData.columns = columns
     },
     removeColumn (idx) {
-      const columns = [...this.clonedData.columns]
-      columns.splice(idx, 1)
-      this.clonedData.columns = columns
+      this.$q.dialog({
+        title: 'Confirm',
+        message: 'Are you sure you want to remove this column?',
+        cancel: true,
+        persistent: true
+      }).onOk(() => {
+        const columns = [...this.clonedData.columns]
+        columns.splice(idx, 1)
+        this.clonedData.columns = columns
+      })
     }
   }
 }

@@ -143,9 +143,16 @@ export default {
       this.editDialog.show = false
     },
     deleteComponent (idx, arrayEditing) {
-      this.$store.commit('app/deleteComponent', {
-        idx,
-        array: arrayEditing
+      this.$q.dialog({
+        title: 'Confirm',
+        message: 'Are you sure you want to remove this component?',
+        cancel: true,
+        persistent: true
+      }).onOk(() => {
+        this.$store.commit('app/deleteComponent', {
+          idx,
+          array: arrayEditing
+        })
       })
     }
   },

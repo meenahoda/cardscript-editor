@@ -55,9 +55,16 @@ export default {
       this.clonedData.facts = facts
     },
     removeFact (idx) {
-      const facts = [...this.clonedData.facts]
-      facts.splice(idx, 1)
-      this.clonedData.facts = facts
+      this.$q.dialog({
+        title: 'Confirm',
+        message: 'Are you sure you want to remove this fact?',
+        cancel: true,
+        persistent: true
+      }).onOk(() => {
+        const facts = [...this.clonedData.facts]
+        facts.splice(idx, 1)
+        this.clonedData.facts = facts
+      })
     }
   }
 }

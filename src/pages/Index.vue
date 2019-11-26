@@ -42,9 +42,16 @@ export default {
       this.$router.push({ path: `/${cardId}/edit` })
     },
     deleteCard (cardId) {
-      const cards = Object.assign({}, this.cards)
-      delete cards[cardId]
-      this.cards = cards
+      this.$q.dialog({
+        title: 'Confirm',
+        message: 'Are you sure you want to remove this card?',
+        cancel: true,
+        persistent: true
+      }).onOk(() => {
+        const cards = Object.assign({}, this.cards)
+        delete cards[cardId]
+        this.cards = cards
+      })
     },
     getTitle (card) {
       return card.templateMeta && card.templateMeta.title
