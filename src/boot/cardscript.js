@@ -137,6 +137,7 @@ export default ({ Vue }) => {
       },
       'Jumbotron': {
         data: {
+          type: 'Jumbotron',
           title: '',
           subtitle: '',
           backgroundImage: '',

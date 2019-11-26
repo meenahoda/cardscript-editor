@@ -12,10 +12,10 @@
         <div class="text-caption text-uppercase text-grey">Body</div>
 
         <q-list>
-          <draggable v-model="cardscriptBody" :options="{ animation: 150 }">
+          <draggable v-model="cardscriptBody" handle=".drag-handle" :options="{ animation: 150 }">
             <q-item v-for="(item, idx) in cardscriptBody" :key="idx" dense>
               <q-item-section side>
-                <q-icon color="grey-8" name="drag_indicator" style="cursor: move;" />
+                <q-icon color="grey-8" name="drag_indicator" style="cursor: move;" class="drag-handle" />
               </q-item-section>
 
               <q-item-section>
@@ -43,10 +43,10 @@
         <div class="text-caption text-uppercase text-grey">Actions</div>
 
         <q-list>
-          <draggable v-model="cardscriptActions" :options="{ animation: 150 }">
+          <draggable v-model="cardscriptActions" handle=".drag-handle" :options="{ animation: 150 }">
             <q-item v-for="(item, idx) in cardscriptActions" :key="idx" dense>
               <q-item-section side>
-                <q-icon color="grey-8" name="drag_indicator" style="cursor: move;" />
+                <q-icon color="grey-8" name="drag_indicator" style="cursor: move;" class="drag-handle" />
               </q-item-section>
 
               <q-item-section>

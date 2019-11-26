@@ -15,10 +15,10 @@
         <div class="text-caption text-uppercase text-grey-8">Items</div>
 
         <q-list v-if="clonedData.items && clonedData.items.length > 0">
-          <draggable v-model="clonedData.items" :options="{ animation: 150 }">
+          <draggable v-model="clonedData.items" handle=".drag-handle" :options="{ animation: 150 }">
             <q-item v-for="(c, idx) in clonedData.items" :key="idx">
               <q-item-section side>
-                <q-icon color="grey-8" name="drag_indicator" style="cursor: move;" />
+                <q-icon color="grey-8" name="drag_indicator" style="cursor: move;" class="drag-handle" />
               </q-item-section>
 
               <q-item-section>
