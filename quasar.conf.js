@@ -91,6 +91,7 @@ module.exports = function (ctx) {
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
+      publicPath: 'cardscript-editor',
       scopeHoisting: true,
       vueRouterMode: 'history',
       // showProgress: false,
