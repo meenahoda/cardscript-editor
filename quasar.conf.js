@@ -68,6 +68,7 @@ module.exports = function (ctx) {
         'QTooltip',
         'QMarkupTable',
         'QPopupEdit',
+        'QMenu',
 
         // todo: Required for cardscript-component, consider requiring them in that package
         'QField',

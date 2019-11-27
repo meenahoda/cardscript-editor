@@ -8,22 +8,14 @@
           Cardscript Editor
         </q-toolbar-title>
 
-        <q-btn v-if="$route.name === 'edit'" icon="save" round flat @click="save">
-          <q-tooltip>
-            Save
-          </q-tooltip>
-        </q-btn>
-
-        <q-btn v-if="$route.name === 'edit'" icon="visibility" round flat @click="preview">
-          <q-tooltip>
-            Preview
-          </q-tooltip>
-        </q-btn>
-
-        <q-btn v-if="$route.name === 'edit'" icon="code" round flat @click="viewJson">
-          <q-tooltip>
-            View JSON
-          </q-tooltip>
+        <q-btn v-if="$route.name === 'edit'" icon="more_vert" round flat>
+          <q-menu>
+            <q-list style="min-width: 100px">
+              <q-item clickable v-close-popup v-for="(action, idx) in actions" :key="idx" @click="action.launch">
+                <q-item-section>{{action.title}}</q-item-section>
+              </q-item>
+            </q-list>
+          </q-menu>
         </q-btn>
       </q-toolbar>
     </q-header>
@@ -39,6 +31,15 @@ import { date } from 'quasar'
 
 export default {
   name: 'Layout',
+  data () {
+    return {
+      actions: [
+        { title: 'Save', launch: this.save },
+        { title: 'Preview', launch: this.preview },
+        { title: 'View JSON', launch: this.viewJson }
+      ]
+    }
+  },
   computed: {
     cardId () {
       return this.$store.state.app.cardId
