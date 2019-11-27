@@ -154,12 +154,24 @@ export default ({ Vue }) => {
         required: [ 'id' ],
         component: () => import(`components/cardscript-components/Table.vue`)
       },
+      'Input.Toggle': {
+        data: {
+          type: 'Input.Toggle',
+          id: '',
+          spacing: '',
+          title: '',
+          icon: '',
+          separator: false
+        },
+        required: [ 'id' ],
+        component: () => import(`components/cardscript-components/InputToggle.vue`)
+      },
       'Input.DateTime': {
         data: {
           type: 'Input.DateTime',
           id: '',
           min: '',
-          max: '1900/01/01',
+          max: '',
           spacing: '',
           title: '',
           withSeconds: false,
