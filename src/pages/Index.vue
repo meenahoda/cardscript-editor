@@ -1,25 +1,51 @@
 <template>
   <q-page class="q-pa-xl">
-    <q-btn label="Start new cardscript" outline color="primary" @click="startNewCardscript" class="q-mr-md" />
+    <div class="row justify-around text-center text-grey-8">
+      <q-card
+        class="q-pa-md q-mb-md col-md-4 col-sm-12 col-xs-12 cursor-pointer"
+        v-for="(action, idx) in actions"
+        :key="idx"
+        @click="action.launch()"
+        v-ripple
+      >
+        <q-card-section>
+          <div class="text-h4">{{action.title}}</div>
+        </q-card-section>
 
-    <q-btn label="Import JSON" outline color="primary" @click="importJson" />
+        <q-card-section style="font-size: 3rem;">
+          <q-icon :name="action.icon" />
+        </q-card-section>
 
-    <q-list class="q-mt-md">
-      <q-item-label header>Existing cards from local storage:</q-item-label>
+        <q-card-section>
+          <div class="text-subtitle1">{{action.description}}</div>
+        </q-card-section>
+      </q-card>
+    </div>
 
-      <q-item v-for="(card, cardId) in cards" :key="cardId">
-        <q-item-section>
-          <q-item-label>{{getTitle(card)}}</q-item-label>
-        </q-item-section>
+    <q-card class="q-mt-xl">
+      <q-card-section>
+        <q-list v-if="Object.keys(cards).length > 0">
+          <q-item-label header>Existing cards from local storage:</q-item-label>
 
-        <q-item-section side>
-          <div class="text-grey-8 q-gutter-xs">
-            <q-btn size="12px" flat dense round icon="edit" @click="launchCard(cardId)" />
-            <q-btn size="12px" flat dense round icon="delete" @click="deleteCard(cardId)" />
-          </div>
-        </q-item-section>
-      </q-item>
-    </q-list>
+          <q-item v-for="(card, cardId) in cards" :key="cardId">
+            <q-item-section>
+              <q-item-label>{{getTitle(card)}}</q-item-label>
+            </q-item-section>
+
+            <q-item-section side>
+              <div class="text-grey-8 q-gutter-xs">
+                <q-btn size="12px" flat dense round icon="edit" @click="launchCard(cardId)" />
+                <q-btn size="12px" flat dense round icon="delete" @click="deleteCard(cardId)" />
+              </div>
+            </q-item-section>
+          </q-item>
+        </q-list>
+
+        <div v-if="Object.keys(cards).length === 0">
+          <q-item-label header>There are no existing cards in local storage.</q-item-label>
+        </div>
+      </q-card-section>
+    </q-card>
   </q-page>
 </template>
 
@@ -28,6 +54,24 @@ const uuidv1 = require('uuid/v1')
 
 export default {
   name: 'PageIndex',
+  data () {
+    return {
+      actions: [
+        {
+          title: 'Create',
+          icon: 'add_circle_outline',
+          description: 'Create a new Card from scratch using our drag-n-drop editor.',
+          launch: this.startNewCardscript
+        },
+        {
+          title: 'Import',
+          icon: 'insert_drive_file',
+          description: 'Import existing JSON code.',
+          launch: this.importJson
+        }
+      ]
+    }
+  },
   methods: {
     startNewCardscript () {
       const id = uuidv1()
