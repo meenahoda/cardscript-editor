@@ -1,8 +1,8 @@
 <template>
   <q-page class="q-pa-xl">
-    <div class="row justify-around text-center text-grey-8">
+    <div class="row justify-around text-center text-grey-8 non-selectable">
       <q-card
-        class="q-pa-md q-mb-md col-md-4 col-sm-12 col-xs-12 cursor-pointer"
+        class="q-pa-md q-mb-md col-md-4 col-sm-12 col-xs-12 cursor-pointer launch-card"
         v-for="(action, idx) in actions"
         :key="idx"
         @click="action.launch()"
@@ -22,7 +22,7 @@
       </q-card>
     </div>
 
-    <q-card class="q-mt-lg">
+    <q-card class="q-mt-lg non-selectable">
       <q-card-section>
         <q-list v-if="Object.keys(cards).length > 0">
           <q-item-label header>Existing cards from local storage:</q-item-label>
@@ -111,3 +111,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .launch-card:hover {
+    background-color: #f5f5f5;
+  }
+</style>
