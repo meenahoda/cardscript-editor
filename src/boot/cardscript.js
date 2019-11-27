@@ -3,6 +3,19 @@ const defaultAdaptiveCard = { type: 'AdaptiveCard', body: [] }
 export default ({ Vue }) => {
   Vue.prototype.$cardscript = {
     body: {
+      'Image': {
+        data: {
+          type: 'Image',
+          altText: '',
+          horizontalAlignment: '',
+          size: '',
+          style: '',
+          url: '',
+          spacing: '',
+          separator: false
+        },
+        component: () => import(`components/cardscript-components/Image.vue`)
+      },
       'Input.ApiLookup': {
         data: {
           type: 'Input.ApiLookup',
