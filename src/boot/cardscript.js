@@ -3,6 +3,27 @@ const defaultAdaptiveCard = { type: 'AdaptiveCard', body: [] }
 export default ({ Vue }) => {
   Vue.prototype.$cardscript = {
     body: {
+      'Input.ApiLookup': {
+        data: {
+          type: 'Input.ApiLookup',
+          id: '',
+          buttonText: 'Go',
+          endpoint: {
+            name: ''
+          },
+          ctxPaths: {
+            results: '',
+            totalHits: ''
+          },
+          spacing: '',
+          showPagination: false,
+          resultsPerPage: 5,
+          parametersCard: defaultAdaptiveCard,
+          resultsCard: defaultAdaptiveCard
+        },
+        required: [ 'id' ],
+        component: () => import(`components/cardscript-components/InputApiLookup.vue`)
+      },
       'Input.ChoiceSet': {
         data: {
           type: 'Input.ChoiceSet',

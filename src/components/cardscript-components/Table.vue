@@ -13,7 +13,7 @@
 
     <q-card class="bg-grey-3 q-my-md">
       <q-card-section>
-        <div class="text-subtitle1">Columns</div>
+        <div class="text-caption text-uppercase text-grey-8">Columns</div>
 
         <q-markup-table v-if="clonedData.columns && clonedData.columns.length > 0" flat class="q-mt-md bg-grey-3">
           <thead>
