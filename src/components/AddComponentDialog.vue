@@ -27,7 +27,7 @@ export default {
     return {
       type: null,
       typeOptions: {
-        body: Object.keys(this.$cardscript['body']).sort(),
+        body: Object.keys(this.$cardscript['body']).filter(x => x !== 'Tab').sort(),
         actions: Object.keys(this.$cardscript['actions']).sort()
       }
     }
