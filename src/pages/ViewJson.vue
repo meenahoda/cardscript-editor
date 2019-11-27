@@ -6,7 +6,6 @@
           ref="viewJSON"
           v-bind:value="JSON.stringify(cardscript, null, 2)"
           type="textarea"
-          :max-height="600"
           rows="7"
           readonly
         />
@@ -35,7 +34,7 @@ export default {
       this.$refs['viewJSON'].select()
       document.execCommand('copy')
       this.$q.notify({
-        position: 'top',
+        color: 'positive',
         message: 'Copied to clipboard.'
       })
     }

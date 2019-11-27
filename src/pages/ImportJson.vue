@@ -6,7 +6,6 @@
           label="Paste your Cardscript JSON here"
           v-model="cardscript"
           type="textarea"
-          :max-height="600"
           rows="7"
         />
       </q-card-section>
