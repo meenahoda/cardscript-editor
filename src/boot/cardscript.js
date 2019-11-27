@@ -154,6 +154,20 @@ export default ({ Vue }) => {
         required: [ 'id' ],
         component: () => import(`components/cardscript-components/Table.vue`)
       },
+      'Input.Slider': {
+        data: {
+          type: 'Input.Slider',
+          id: '',
+          spacing: '',
+          title: '',
+          min: null,
+          max: null,
+          step: null,
+          separator: false
+        },
+        required: [ 'id' ],
+        component: () => import(`components/cardscript-components/InputSlider.vue`)
+      },
       'Input.Toggle': {
         data: {
           type: 'Input.Toggle',
