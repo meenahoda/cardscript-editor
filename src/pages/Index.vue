@@ -22,7 +22,7 @@
       </q-card>
     </div>
 
-    <q-card class="q-mt-xl">
+    <q-card class="q-mt-lg">
       <q-card-section>
         <q-list v-if="Object.keys(cards).length > 0">
           <q-item-label header>Existing cards from local storage:</q-item-label>
@@ -40,10 +40,6 @@
             </q-item-section>
           </q-item>
         </q-list>
-
-        <div v-if="Object.keys(cards).length === 0">
-          <q-item-label header>There are no existing cards in local storage.</q-item-label>
-        </div>
       </q-card-section>
     </q-card>
   </q-page>
@@ -60,13 +56,13 @@ export default {
         {
           title: 'Create',
           icon: 'add_circle_outline',
-          description: 'Create a new Card from scratch using our drag-n-drop editor.',
+          description: 'Create a new card from scratch using the drag-n-drop editor.',
           launch: this.startNewCardscript
         },
         {
           title: 'Import',
           icon: 'insert_drive_file',
-          description: 'Import existing JSON code.',
+          description: 'Import an existing card from JSON.',
           launch: this.importJson
         }
       ]
