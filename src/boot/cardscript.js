@@ -154,6 +154,21 @@ export default ({ Vue }) => {
         required: [ 'id' ],
         component: () => import(`components/cardscript-components/Table.vue`)
       },
+      'Input.Date': {
+        data: {
+          type: 'Input.Date',
+          id: '',
+          min: '',
+          max: '1900/01/01',
+          spacing: '',
+          icon: '',
+          title: '',
+          clearable: false,
+          separator: false
+        },
+        required: [ 'id' ],
+        component: () => import(`components/cardscript-components/InputCurrency.vue`)
+      },
       'Input.Currency': {
         data: {
           type: 'Input.Currency',
