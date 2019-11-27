@@ -154,6 +154,24 @@ export default ({ Vue }) => {
         required: [ 'id' ],
         component: () => import(`components/cardscript-components/Table.vue`)
       },
+      'TabSet': {
+        data: {
+          id: '',
+          type: 'TabSet',
+          spacing: '',
+          tabs: []
+        },
+        required: [ 'id' ],
+        component: () => import(`components/cardscript-components/TabSet.vue`)
+      },
+      'Tab': {
+        data: {
+          type: 'Tab',
+          title: '',
+          items: []
+        },
+        component: () => import(`components/cardscript-components/Tab.vue`)
+      },
       'Input.Slider': {
         data: {
           type: 'Input.Slider',
