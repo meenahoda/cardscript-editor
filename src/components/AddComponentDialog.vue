@@ -11,7 +11,7 @@
 
       <q-card-actions align="right">
         <q-btn label="Cancel" color="primary" @click="$emit('cancel')" outline />
-        <q-btn label="Add" color="primary" @click="$emit('add', type)" />
+        <q-btn label="Add" color="primary" @click="add" />
       </q-card-actions>
     </q-card>
   </q-dialog>
@@ -30,6 +30,12 @@ export default {
         body: Object.keys(this.$cardscript['body']).filter(x => x !== 'Tab').sort(),
         actions: Object.keys(this.$cardscript['actions']).sort()
       }
+    }
+  },
+  methods: {
+    add () {
+      this.$emit('add', this.type)
+      this.type = null
     }
   }
 }
