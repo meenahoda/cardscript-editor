@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header>
       <q-toolbar>
         <q-btn v-if="$route.name === 'edit' || $route.name === 'preview' || $route.name === 'viewJson' || $route.name === 'importJson'" icon="arrow_back" round flat @click="goBack"/>
 
