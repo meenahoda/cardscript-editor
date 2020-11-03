@@ -13,6 +13,7 @@ export default {
       actionStyles: ['list', 'dropdown'],
       choiceStyles: ['expanded', 'compact'],
       selectionType: ['multi', 'single'],
+      sourceType: ['mp4', 'mov', 'vimeo', 'youtube'],
       addDialogShow: false,
       editDialog: {
         show: false,

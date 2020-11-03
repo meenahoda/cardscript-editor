@@ -11,7 +11,7 @@ export default ({ Vue }) => {
           size: '',
           style: '',
           url: '',
-          spacing: '',
+          spacing: 'medium',
           separator: false
         },
         component: () => import(`components/cardscript-components/Image.vue`)
@@ -28,7 +28,7 @@ export default ({ Vue }) => {
             results: '',
             totalHits: ''
           },
-          spacing: '',
+          spacing: 'medium',
           showPagination: false,
           resultsPerPage: 5,
           parametersCard: defaultAdaptiveCard,
@@ -41,9 +41,9 @@ export default ({ Vue }) => {
         data: {
           type: 'Input.ChoiceSet',
           id: '',
-          title: '',
+          title: 'Title Here',
           icon: '',
-          spacing: '',
+          spacing: 'medium',
           style: '',
           clearable: false,
           separator: false,
@@ -56,7 +56,7 @@ export default ({ Vue }) => {
       'FactSet': {
         data: {
           type: 'FactSet',
-          spacing: '',
+          spacing: 'medium',
           separator: false,
           facts: []
         },
@@ -65,7 +65,7 @@ export default ({ Vue }) => {
       'Collapsible': {
         data: {
           type: 'Collapsible',
-          title: '',
+          title: 'Title Here',
           card: defaultAdaptiveCard
         },
         component: () => import(`components/cardscript-components/Collapsible.vue`)
@@ -74,9 +74,9 @@ export default ({ Vue }) => {
         data: {
           type: 'Chip',
           icon: '',
-          text: '',
+          text: 'Text Here',
           color: '',
-          spacing: ''
+          spacing: 'medium'
         },
         component: () => import(`components/cardscript-components/Chip.vue`)
       },
@@ -94,7 +94,7 @@ export default ({ Vue }) => {
         data: {
           type: 'TextBlock',
           id: '',
-          text: '',
+          text: 'Text Here',
           isSubtle: false,
           wrap: false,
           separator: false,
@@ -107,10 +107,10 @@ export default ({ Vue }) => {
         data: {
           type: 'Input.Text',
           id: '',
-          title: '',
+          title: 'Title Here',
           icon: '',
           placeholder: '',
-          spacing: '',
+          spacing: 'medium',
           separator: false,
           editor: false,
           isMultiline: false
@@ -143,7 +143,7 @@ export default ({ Vue }) => {
         data: {
           type: 'Table',
           id: '',
-          title: '',
+          title: 'Title Here',
           arrayPath: '',
           notFoundText: '',
           rowKey: '',
@@ -158,7 +158,7 @@ export default ({ Vue }) => {
         data: {
           id: '',
           type: 'TabSet',
-          spacing: '',
+          spacing: 'medium',
           tabs: []
         },
         required: [ 'id' ],
@@ -167,7 +167,7 @@ export default ({ Vue }) => {
       'Tab': {
         data: {
           type: 'Tab',
-          title: '',
+          title: 'Title Here',
           items: []
         },
         component: () => import(`components/cardscript-components/Tab.vue`)
@@ -176,8 +176,8 @@ export default ({ Vue }) => {
         data: {
           type: 'Input.Slider',
           id: '',
-          spacing: '',
-          title: '',
+          spacing: 'medium',
+          title: 'Title Here',
           min: null,
           max: null,
           step: null,
@@ -190,8 +190,8 @@ export default ({ Vue }) => {
         data: {
           type: 'Input.Toggle',
           id: '',
-          spacing: '',
-          title: '',
+          spacing: 'medium',
+          title: 'Title Here',
           icon: '',
           separator: false
         },
@@ -204,8 +204,8 @@ export default ({ Vue }) => {
           id: '',
           min: '',
           max: '',
-          spacing: '',
-          title: '',
+          spacing: 'medium',
+          title: 'Title Here',
           withSeconds: false,
           separator: false
         },
@@ -218,9 +218,9 @@ export default ({ Vue }) => {
           id: '',
           min: '',
           max: '1900/01/01',
-          spacing: '',
+          spacing: 'medium',
           icon: '',
-          title: '',
+          title: 'Title Here',
           clearable: false,
           separator: false
         },
@@ -232,7 +232,7 @@ export default ({ Vue }) => {
           type: 'Input.Currency',
           id: '',
           placeholder: '',
-          spacing: '',
+          spacing: 'medium',
           minimum: null,
           maximum: null,
           separator: false
@@ -244,10 +244,10 @@ export default ({ Vue }) => {
         data: {
           type: 'Input.Number',
           id: '',
-          title: '',
+          title: 'Title Here',
           icon: '',
           placeholder: '',
-          spacing: '',
+          spacing: 'medium',
           minimum: null,
           maximum: null,
           separator: false
@@ -258,7 +258,7 @@ export default ({ Vue }) => {
       'Jumbotron': {
         data: {
           type: 'Jumbotron',
-          title: '',
+          title: 'Title Here',
           subtitle: '',
           backgroundImage: '',
           wash: ''
@@ -269,15 +269,40 @@ export default ({ Vue }) => {
         data: {
           type: 'Container',
           id: '',
-          title: '',
+          title: 'Title Here',
           backgroundImage: '',
           wash: '',
           color: '',
-          spacing: '',
+          spacing: 'medium',
           separator: false,
           items: []
         },
         component: () => import(`components/cardscript-components/Container.vue`)
+      },
+      'Separator': {
+        data: {
+          type: 'Separator'
+        },
+        component: () => import(`components/cardscript-components/Separator.vue`)
+      },
+      'PhaseBanner': {
+        data: {
+          type: 'PhaseBanner'
+        },
+        component: () => import(`components/cardscript-components/PhaseBanner.vue`)
+      },
+      'Media': {
+        data: {
+          type: 'Media',
+          sourceType: '',
+          poster: '',
+          sources: [
+            {
+              url: ''
+            }
+          ]
+        },
+        component: () => import(`components/cardscript-components/Media.vue`)
       }
     },
     actions: {
@@ -332,7 +357,7 @@ export default ({ Vue }) => {
         data: {
           type: 'Action.PushCard',
           stateMachineName: '',
-          title: ''
+          title: 'Title Here'
         },
         component: () => import(`components/cardscript-components/ActionPushCard.vue`)
       },
@@ -340,7 +365,7 @@ export default ({ Vue }) => {
         data: {
           type: 'Action.ReplaceCard',
           stateMachineName: '',
-          title: ''
+          title: 'Title Here'
         },
         component: () => import(`components/cardscript-components/ActionReplaceCard.vue`)
       }
