@@ -4,9 +4,11 @@
       <q-toolbar>
         <q-btn v-if="$route.name === 'edit' || $route.name === 'preview' || $route.name === 'viewJson' || $route.name === 'importJson'" icon="arrow_back" round flat @click="goBack"/>
 
-        <q-toolbar-title>
-          Cardscript Editor
-        </q-toolbar-title>
+        <q-avatar>
+          <img src="tymly-white-cloud.svg">
+        </q-avatar>
+
+        <q-toolbar-title>Cardscript Editor</q-toolbar-title>
 
         <q-btn v-if="$route.name === 'edit'" icon="more_vert" round flat>
           <q-menu>

@@ -83,9 +83,9 @@ export default ({ Vue }) => {
       'ActionSet': {
         data: {
           type: 'ActionSet',
-          title: '',
-          spacing: '',
-          actionStyle: '',
+          title: 'Insert Title Here',
+          spacing: 'medium',
+          actionStyle: 'dropdown',
           actions: []
         },
         component: () => import(`components/cardscript-components/ActionSet.vue`)
