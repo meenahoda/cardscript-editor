@@ -46,7 +46,7 @@
 </template>
 
 <script>
-const uuidv1 = require('uuid/v1')
+const { v1: uuid } = require('uuid')
 
 export default {
   name: 'PageIndex',
@@ -70,7 +70,7 @@ export default {
   },
   methods: {
     startNewCardscript () {
-      const id = uuidv1()
+      const id = uuid()
       this.$store.commit('app/setCardId', id)
       this.$store.commit('app/resetCardscript')
       this.launchCard(id)

@@ -3,8 +3,6 @@
   "version": "0.0.1",
   "description": "Tool for editing cardscript",
   "productName": "Cardscript Editor",
-  "cordovaId": "org.cordova.quasar.app",
-  "capacitorId": "",
   "author": "Meena.Hoda <meena.hoda@wmfs.net>",
   "private": true,
   "scripts": {
@@ -14,21 +12,22 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@quasar/extras": "^1.5.2",
+    "@quasar/extras": "^1.9.10",
     "@wmfs/cardscript-component": "1.4.0",
-    "quasar": "^1.9.4",
-    "uuid": "7.0.1",
-    "vuedraggable": "2.23.2",
-    "vuex-persistedstate": "2.7.1"
+    "core-js": "3.0.0",
+    "quasar": "^1.14.3",
+    "uuid": "8.3.1",
+    "vuedraggable": "2.24.3",
+    "vuex-persistedstate": "3.1.0"
   },
   "devDependencies": {
-    "@quasar/quasar-app-extension-qmediaplayer": "1.0.17",
-    "@quasar/app": "^1.5.8",
-    "@vue/eslint-config-standard": "^5.1.2",
+    "@quasar/app": "^2.1.6",
+    "@quasar/quasar-app-extension-qmediaplayer": "1.1.2",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "eslint-loader": "^3.0.3",
-    "eslint-plugin-vue": "^6.2.1"
+    "eslint": "^7.12.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-standard": "4.0.2",
+    "eslint-plugin-vue": "^7.1.0"
   },
   "engines": {
     "node": ">= 8.9.0",
@@ -36,6 +35,14 @@
     "yarn": ">= 1.6.0"
   },
   "browserslist": [
-    "last 1 version, not dead, ie >= 11"
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
   ]
 }

@@ -17,7 +17,7 @@
   </q-page>
 </template>
 <script>
-const uuidv1 = require('uuid/v1')
+const { v1: uuid } = require('uuid')
 
 export default {
   name: 'PagePreview',
@@ -30,7 +30,7 @@ export default {
     importJson () {
       if (this.cardscript) {
         // todo: validate against cardscript-schema?
-        const id = uuidv1()
+        const id = uuid()
         this.$store.commit('app/setCardId', id)
         this.$store.commit('app/setCardscript', JSON.parse(this.cardscript))
         this.$router.push({ path: `/${id}/edit` })

@@ -176,7 +176,7 @@
   </div>
 </template>
 <script>
-const uuidv1 = require('uuid/v1')
+const { v1: uuid } = require('uuid')
 
 import draggable from 'vuedraggable'
 import cardscriptComponent from '@wmfs/cardscript-component'
@@ -335,7 +335,7 @@ export default {
       if (this.loadedCardId) {
         id = this.loadedCardId
       } else {
-        id = uuidv1()
+        id = uuid()
         this.loadedCardId = id
       }
 
